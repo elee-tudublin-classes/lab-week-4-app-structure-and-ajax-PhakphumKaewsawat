@@ -1,0 +1,18 @@
+<form hx-post="/todo/add" hx-target="#todoList" hx-swap="beforeend" hx-include="#inputItem">
+  <div class="mb-3">
+      <label for="inputItem" class="form-label">New To Do item</label>
+       <input type="text" class="form-control" id="inputItem" name="item" required>
+   </div>
+   <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Add New Item</button>
+   </div>
+</form>
+
+
+<li id="{{ todo.id }}" class="list-group-item  d-flex justify-content-between align-items-start">
+  <div class="ms-2 me-auto">
+      <div class="fw-bold">id: {{ todo.id }}</div>
+      {{ todo.details }}
+    </div>
+    <span class="badge text-bg-primary rounded-pill">completed: {{ todo.completed }}</span>
+</li>
